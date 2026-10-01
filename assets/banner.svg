@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-labelledby="title desc">
+  <title id="title">World Models</title>
+  <desc id="desc">Learning to perceive, predict, and plan in latent space.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060a18"/>
+      <stop offset="0.55" stop-color="#0d1433"/>
+      <stop offset="1" stop-color="#1b0f3d"/>
+    </linearGradient>
+
+    <radialGradient id="glowGlobe" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6366f1" stop-opacity="0.45"/>
+      <stop offset="0.6" stop-color="#6366f1" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowCorner" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="sphere" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#1e2a5c" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#090e24" stop-opacity="0.95"/>
+    </radialGradient>
+
+    <linearGradient id="wire" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="0.5" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <linearGradient id="titleFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.6" stop-color="#e0e7ff"/>
+      <stop offset="1" stop-color="#a5b4fc"/>
+    </linearGradient>
+
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.5" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#e879f9"/>
+    </linearGradient>
+
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity="0.06"/>
+    </pattern>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="frame"><rect width="1280" height="420" rx="18"/></clipPath>
+    <clipPath id="globeClip"><circle cx="1000" cy="210" r="125"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <!-- Background -->
+    <rect width="1280" height="420" fill="url(#bg)"/>
+    <rect width="1280" height="420" fill="url(#dots)"/>
+    <circle cx="120" cy="40" r="320" fill="url(#glowCorner)"/>
+    <circle cx="1000" cy="210" r="300" fill="url(#glowGlobe)"/>
+
+    <!-- Orbit (back) -->
+    <g transform="rotate(-14 1000 210)">
+      <ellipse cx="1000" cy="210" rx="205" ry="50" fill="none" stroke="url(#wire)" stroke-opacity="0.35" stroke-width="1.2" stroke-dasharray="2 6"/>
+      <ellipse cx="1000" cy="210" rx="250" ry="72" fill="none" stroke="#818cf8" stroke-opacity="0.12" stroke-width="1"/>
+    </g>
+
+    <!-- Globe -->
+    <circle cx="1000" cy="210" r="125" fill="url(#sphere)"/>
+    <g clip-path="url(#globeClip)" fill="none" stroke="url(#wire)" stroke-width="1.1" stroke-opacity="0.55">
+      <!-- latitudes -->
+      <ellipse cx="1000" cy="130" rx="96"  ry="18"/>
+      <ellipse cx="1000" cy="170" rx="118" ry="24"/>
+      <ellipse cx="1000" cy="210" rx="125" ry="27"/>
+      <ellipse cx="1000" cy="250" rx="118" ry="24"/>
+      <ellipse cx="1000" cy="290" rx="96"  ry="18"/>
+      <!-- rotating meridians -->
+      <ellipse cx="1000" cy="210" rx="125" ry="125">
+        <animate attributeName="rx" values="125;0;125" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.37 0 0.63 1;0.37 0 0.63 1" dur="12s" begin="0s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="1000" cy="210" rx="108" ry="125">
+        <animate attributeName="rx" values="125;0;125" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.37 0 0.63 1;0.37 0 0.63 1" dur="12s" begin="-2s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="1000" cy="210" rx="62" ry="125">
+        <animate attributeName="rx" values="125;0;125" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.37 0 0.63 1;0.37 0 0.63 1" dur="12s" begin="-4s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="1000" cy="210" rx="0" ry="125">
+        <animate attributeName="rx" values="125;0;125" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.37 0 0.63 1;0.37 0 0.63 1" dur="12s" begin="-6s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="1000" cy="210" rx="62" ry="125">
+        <animate attributeName="rx" values="125;0;125" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.37 0 0.63 1;0.37 0 0.63 1" dur="12s" begin="-8s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="1000" cy="210" rx="108" ry="125">
+        <animate attributeName="rx" values="125;0;125" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.37 0 0.63 1;0.37 0 0.63 1" dur="12s" begin="-10s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    <circle cx="1000" cy="210" r="125" fill="none" stroke="url(#wire)" stroke-width="1.6" stroke-opacity="0.9"/>
+
+    <!-- Latent state graph on the globe -->
+    <g stroke="#a5b4fc" stroke-opacity="0.55" stroke-width="1">
+      <line x1="945" y1="150" x2="1030" y2="175"/>
+      <line x1="1030" y1="175" x2="1065" y2="250"/>
+      <line x1="1030" y1="175" x2="975" y2="245"/>
+      <line x1="975" y1="245" x2="1065" y2="250"/>
+      <line x1="975" y1="245" x2="1010" y2="300"/>
+    </g>
+    <g fill="#e0f2fe" filter="url(#glow)">
+      <circle cx="945" cy="150" r="3.5"/>
+      <circle cx="1030" cy="175" r="4.5">
+        <animate attributeName="r" values="4.5;6.5;4.5" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1065" cy="250" r="3.5"/>
+      <circle cx="975" cy="245" r="4">
+        <animate attributeName="r" values="4;5.5;4" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1010" cy="300" r="3"/>
+    </g>
+
+    <!-- Orbit (front) with travelling agents -->
+    <g transform="rotate(-14 1000 210)">
+      <path id="orbitPath" d="M795,210 a205,50 0 1,0 410,0 a205,50 0 1,0 -410,0" fill="none"/>
+      <path d="M795,210 a205,50 0 0,0 410,0" fill="none" stroke="url(#wire)" stroke-width="1.6" stroke-opacity="0.8"/>
+      <circle r="5" fill="#67e8f9" filter="url(#glow)">
+        <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#orbitPath"/></animateMotion>
+      </circle>
+      <circle r="3.5" fill="#e879f9" filter="url(#glow)">
+        <animateMotion dur="9s" begin="-4.5s" repeatCount="indefinite"><mpath href="#orbitPath"/></animateMotion>
+      </circle>
+    </g>
+
+    <!-- Floating equation -->
+    <text x="1000" y="388" text-anchor="middle" font-family="'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#94a3b8" fill-opacity="0.85">ẑ<tspan font-size="11" dy="4">t+1</tspan><tspan dy="-4">  ~  p</tspan><tspan font-size="11" dy="4">θ</tspan><tspan dy="-4">( z</tspan><tspan font-size="11" dy="4">t+1</tspan><tspan dy="-4"> | z</tspan><tspan font-size="11" dy="4">t</tspan><tspan dy="-4">, a</tspan><tspan font-size="11" dy="4">t</tspan><tspan dy="-4"> )</tspan></text>
+
+    <!-- Text block -->
+    <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+      <rect x="80" y="104" width="4" height="18" rx="2" fill="url(#accentLine)"/>
+      <text x="96" y="119" font-size="14" font-weight="600" letter-spacing="3.5" fill="#67e8f9">RESEARCH  ·  IMPLEMENTATIONS  ·  NOTES</text>
+
+      <text x="76" y="208" font-size="82" font-weight="800" letter-spacing="-2" fill="url(#titleFill)">World Models</text>
+
+      <text x="80" y="254" font-size="22" font-weight="400" fill="#a3b1cc">Learning to perceive, predict, and plan in latent space</text>
+
+      <!-- Pipeline chips -->
+      <g font-size="14" font-weight="600" text-anchor="middle">
+        <rect x="80"  y="292" width="110" height="34" rx="17" fill="#22d3ee" fill-opacity="0.10" stroke="#22d3ee" stroke-opacity="0.55"/>
+        <text x="135" y="314" fill="#a5f3fc">Observe</text>
+        <text x="208" y="314" fill="#64748b">→</text>
+
+        <rect x="226" y="292" width="110" height="34" rx="17" fill="#60a5fa" fill-opacity="0.10" stroke="#60a5fa" stroke-opacity="0.55"/>
+        <text x="281" y="314" fill="#bfdbfe">Encode</text>
+        <text x="354" y="314" fill="#64748b">→</text>
+
+        <rect x="372" y="292" width="110" height="34" rx="17" fill="#818cf8" fill-opacity="0.12" stroke="#818cf8" stroke-opacity="0.6"/>
+        <text x="427" y="314" fill="#c7d2fe">Imagine</text>
+        <text x="500" y="314" fill="#64748b">→</text>
+
+        <rect x="518" y="292" width="110" height="34" rx="17" fill="#c084fc" fill-opacity="0.12" stroke="#c084fc" stroke-opacity="0.6"/>
+        <text x="573" y="314" fill="#e9d5ff">Act</text>
+      </g>
+    </g>
+
+    <!-- Bottom accent line -->
+    <rect x="0" y="416" width="1280" height="4" fill="url(#accentLine)"/>
+  </g>
+</svg>
