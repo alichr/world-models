@@ -1,0 +1,23 @@
+[project]
+name = "worldmodels"
+version = "0.1.0"
+description = "PyTorch reimplementation of World Models (Ha & Schmidhuber, 2018) for CarRacing"
+requires-python = ">=3.10"
+dependencies = [
+    "gymnasium[box2d]>=1.0",
+    "torch>=2.2",
+    "numpy",
+    "cma",
+    "pillow",
+    "imageio",
+    "imageio-ffmpeg",
+    "matplotlib",
+    "tqdm",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["worldmodels"]

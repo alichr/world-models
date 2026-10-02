@@ -16,3 +16,13 @@
 </div>
 
 ---
+
+## Implemented methods
+
+Each method lives in its own self-contained folder with code, training scripts and a detailed README.
+
+| # | Method | Paper | Environment | Result (this repo) | Paper |
+|:-:|---|---|---|:-:|:-:|
+| 01 | [**World Models**](01-world-models-2018/) | Ha & Schmidhuber, 2018 · [arXiv:1803.10122](https://arxiv.org/abs/1803.10122) | CarRacing | **803 ± 102** | 906 ± 21 |
+
+<sub>Scores are average reward on unseen tracks (CarRacing is considered solved at 900). The 01 result is from 90 CMA-ES generations on a single laptop (Apple M4, no CUDA GPU), evaluated on 32 tracks.</sub>
